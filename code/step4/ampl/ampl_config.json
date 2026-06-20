@@ -1,0 +1,23 @@
+{
+    "run_description": {
+        "project"        : "CHM155_004"
+    },
+    "paths": {
+        "work": {
+            "ampl"  : "/ccs/home/blackst/IMPECCABLE_2.0/ampl_pose_prediction"
+        }
+    },
+    "settings": {
+        "ampl": {
+            "pdb_dir": "/lustre/orion/chm155/proj-shared/ESMACS+RCT/tnks2-ML-docking/Model-generation/output_combined_trajectories/pdbs",
+            "dcd_dir": "/lustre/orion/chm155/proj-shared/ESMACS+RCT/tnks2-ML-docking/Model-generation/output_combined_trajectories/dcds",
+            "mmpbsa_dir": "/lustre/orion/chm155/proj-shared/ESMACS+RCT/tnks2-ML-docking/min",
+            "smiles_file": "/lustre/orion/chm155/proj-shared/ESMACS+RCT/tnks2-ML-docking/docking/compounds.smi",
+            "prepared_data_file": "/lustre/orion/chm155/proj-shared/AMPL/paper_writing/molecular_pose_rdkit/data_files/training_data_featurized.csv",
+            "mode": "training",
+            "train_batch_size": 1000,
+            "result_dir": "/lustre/orion/chm155/proj-shared/AMPL/hpo_jan2025/MP-RD-NN",
+            "descriptor_type": "bin_cont_scores_24_rdkit_filtered_descriptors"
+        }
+    }
+}

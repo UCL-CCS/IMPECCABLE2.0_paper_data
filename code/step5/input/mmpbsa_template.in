@@ -1,0 +1,14 @@
+&general
+startframe=START, endframe=END, interval=1,
+verbose=2, keep_files=1,
+/
+&gb
+igb=2, saltcon=0.0,
+/
+&pb
+istrng=0.0, fillratio=4.0, inp=1, radiopt=0,
+/
+#&nmode
+#maxcyc=10000, drms=0.0001,
+#/
+

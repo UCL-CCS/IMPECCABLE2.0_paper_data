@@ -1,0 +1,66 @@
+[[component]]
+[component.custom_alerts]
+
+[[component.custom_alerts.endpoint]]
+name = "Alerts"
+
+params.smarts = [
+    "[*;r8]",
+    "[*;r9]",
+    "[*;r10]",
+    "[*;r11]",
+    "[*;r12]",
+    "[*;r13]",
+    "[*;r14]",
+    "[*;r15]",
+    "[*;r16]",
+    "[*;r17]",
+    "[#8][#8]",
+    "[#6;+]",
+    "[#16][#16]",
+    "[#7;!n][S;!$(S(=O)=O)]",
+    "[#7;!n][#7;!n]",
+    "C#C",
+    "C(=[O,S])[O,S]",
+    "[#7;!n][C;!$(C(=[O,N])[N,O])][#16;!s]",
+    "[#7;!n][C;!$(C(=[O,N])[N,O])][#7;!n]",
+    "[#7;!n][C;!$(C(=[O,N])[N,O])][#8;!o]",
+    "[#8;!o][C;!$(C(=[O,N])[N,O])][#16;!s]",
+    "[#8;!o][C;!$(C(=[O,N])[N,O])][#8;!o]",
+    "[#16;!s][C;!$(C(=[O,N])[N,O])][#16;!s]"
+]
+
+
+[[component]]
+[component.QED]
+
+[[component.QED.endpoint]]
+name = "QED"
+weight = 0.2
+
+
+[[component]]
+[component.NumAtomStereoCenters]
+
+[[component.NumAtomStereoCenters.endpoint]]
+name = "Stereo"
+weight = 0.2
+
+transform.type = "left_step"
+transform.low = 0
+
+
+[[component]]
+[component.ChemProp]
+
+[[component.ChemProp.endpoint]]
+name = "ChemProp"
+weight = 0.6
+
+params.checkpoint_dir = "chemprop/%best_model%/"
+params.rdkit_2d_normalized = true
+
+transform.type = "reverse_sigmoid"
+transform.high = 0.0
+transform.low = -50.0
+transform.k = 0.4

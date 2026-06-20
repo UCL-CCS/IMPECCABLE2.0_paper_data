@@ -1,0 +1,16 @@
+{
+    "run_description": {
+        "project": "CHM155_001"
+    },
+    "paths": {
+        "work": {
+            "reinvent": "/lustre/orion/chm155/proj-shared/impeccable_data/DEMO/REINVENT"
+        }
+    },
+    "settings": {
+        "reinvent": {
+            "prev_step": "itr0",
+            "curr_step": "itr1"
+        }
+    }
+}

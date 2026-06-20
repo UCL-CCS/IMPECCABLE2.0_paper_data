@@ -1,0 +1,30 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+source leaprc.gaff2
+addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } { "N2" "N" "sp3" } }
+loadamberprep ../../../../model-inputs/ZAFF.prep #Load ZAFF prep file
+loadamberparams ../../../../model-inputs/ZAFF.frcmod #Load ZAFF frcmod file
+
+frcmod = loadamberparams ../../par-gen/LIG/LIG.frcmod
+
+prot = loadpdb ../../../../model-inputs/prot-pdb4amber.pdb
+lig = loadmol2 ../../par-gen/LIG/LIG.mol2
+
+bond prot.209.ZN prot.130.SG
+bond prot.209.ZN prot.133.ND1
+bond prot.209.ZN prot.138.SG
+bond prot.209.ZN prot.141.SG
+
+com = combine {prot lig}
+
+alignaxes com
+
+addions com Cl- 0.0
+addions com Na+ 0.0
+solvatebox com TIP3PBOX 10
+
+savepdb com complex.pdb
+saveamberparm com complex.top complex.crd
+
+quit
+
